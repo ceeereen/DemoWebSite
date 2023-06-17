@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Müşteri Formu</title>
+</head>
+<body>
+    <h1>Müşteri Formu</h1>
+    <form action="register" method="post">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="surname">surname:</label>
+        <input type="text" id="surname" name="surname"><br><br>
+        <input type="submit" value="Gönder">
+    </form>
+    
+    <div th:if="${not #strings.isEmpty(name) and not #strings.isEmpty(surname)}">
+        <p>İsim: <span th:text="${name}"></span></p>
+        <p>Soyisim: <span th:text="${surname}"></span></p>
+    </div>
+</body>
+</html>
